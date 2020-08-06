@@ -1,0 +1,73 @@
+:host {
+  --element-width: 30px;
+  --font-size: 1em;
+  --text-color: #9c9c9c;
+  --text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-container {
+  margin: 0 auto;
+  max-width: 700px;
+  .title {
+    text-align: center;
+    font-size: var(--font-size);
+    padding-bottom: 5px;
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+  }
+
+  .calendar-days {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-gap: 5px;
+    justify-items: center;
+
+    .dayname {
+      font-size: var(--font-size);
+      color: var(--text-color);
+      text-shadow: var(--text-shadow);
+      padding-bottom: 5px;
+    }
+
+    .day {
+      text-shadow: var(--text-shadow);
+      font-size: var(--font-size);
+      color: white;
+      border-radius: 50%;
+      background-color: #64a1ff;
+      width: var(--element-width);
+      height: var(--element-width);
+      line-height: var(--element-width);
+      text-align: center;
+      cursor: pointer;
+
+      &.today {
+        background-color: #4f67d1;
+      }
+
+      &.day_disabled {
+        cursor: not-allowed;
+        background-color: #e8e8e8;
+      }
+
+      &:hover:not(.day_disabled) {
+        background-color: #498cf0;
+      }
+    }
+  }
+
+  @media (min-width: 325px) {
+    --element-width: 40px;
+    --font-size: 1.2em;
+  }
+
+  @media (min-width: 400px) {
+    --element-width: 50px;
+    --font-size: 1.4em;
+  }
+
+  @media (min-width: 550px) {
+    --element-width: 70px;
+    --font-size: 1.6em;
+  }
+}

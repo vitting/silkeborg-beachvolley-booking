@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "silkeborg-beachvolley": {
+      "hosting": {
+        "silkeborg-beachvolley-booking": [
+          "silkeborg-beachvolley"
+        ]
+      }
+    }
+  }
+}
