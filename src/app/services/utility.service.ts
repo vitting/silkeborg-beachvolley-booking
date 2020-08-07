@@ -76,4 +76,9 @@ export class UtilityService {
       ],
     };
   }
+
+  get dayNames(): string[] {
+    const dayNames: string[] = ["man", "tirs", "ons", "tors", "fre", "lør", "søn"];
+    return dayNames;
+  }
 }
