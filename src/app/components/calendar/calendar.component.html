@@ -1,14 +1,22 @@
 <div class="calendar-container">
   <div class="top">
-    <button mat-icon-button (click)="onChangeMonth('prev')"><mat-icon>chevron_left</mat-icon></button>
+    <button mat-icon-button (click)="onChangeMonth('prev')">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
     <div class="title text">{{title}}</div>
-    <button mat-icon-button (click)="onChangeMonth('next')"><mat-icon>chevron_right</mat-icon></button>
+    <button mat-icon-button (click)="onChangeMonth('next')">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
   </div>
 
   <div class="calendar-days">
     <div class="dayname text" *ngFor="let dayname of dayNames">{{dayname}}</div>
     <ng-container *ngFor="let day of days">
-      <div class="day" [ngClass]="{'day_disabled': !day.active, 'day_active': day.active, 'today': day.currentDay}" (click)="onDayClick(day)">
+      <div
+        class="day"
+        [ngClass]="getDayStyling(day)"
+        (click)="onDayClick(day)"
+      >
         {{day.day}}
       </div>
     </ng-container>

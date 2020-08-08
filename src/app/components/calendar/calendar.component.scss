@@ -9,8 +9,12 @@
   --day-color: #ffffff;
   --day-bgcolor-active: #64a1ff;
   --day-bgcolor-today: #4f67d1;
-  --day-bgcolor-hover: #498cf0;
+  --day-bgcolor-selected: #3c52b1;
+  --day-bgcolor-marking: #ffffff;
+  --day-bgcolor-hover: #3c52b1;
   --day-bgcolor-disabled: #e8e8e8;
+  --marking-size: 3px;
+  --marking-margin-top: 3px;
 }
 
 .calendar-container {
@@ -47,6 +51,7 @@
     }
 
     .day {
+      position: relative;
       text-shadow: var(--text-shadow);
       font-size: var(--font-size);
       color: var(--day-color);
@@ -60,10 +65,24 @@
       &.day_active {
         background-color: var(--day-bgcolor-active);
         cursor: pointer;
-        box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 
         &.today {
           background-color: var(--day-bgcolor-today);
+        }
+
+        &.selected {
+          background-color: var(--day-bgcolor-selected);
+        }
+
+        &.marking::after {
+          content: "";
+          position: absolute;
+          width: var(--marking-size);
+          height: var(--marking-size);
+          top: calc(50% + var(--marking-size) + var(--marking-margin-top));
+          right: calc(50% - var(--marking-size) / 2);
+          background-color: var(--day-bgcolor-marking);
+          border-radius: 50%;
         }
 
         &:hover {
@@ -87,17 +106,23 @@
     --element-width: 40px;
     --font-size: 1.2em;
     --daynames-padding: 5px;
+    --marking-size: 4px;
+    --marking-margin-top: 5px;
   }
 
   @media (min-width: 400px) {
     --element-width: 50px;
     --font-size: 1.4em;
     --daynames-padding: 5px;
+    --marking-size: 6px;
+    --marking-margin-top: 5px;
   }
 
   @media (min-width: 550px) {
     --element-width: 70px;
     --font-size: 1.6em;
     --daynames-padding: 5px;
+    --marking-size: 8px;
+    --marking-margin-top: 5px;
   }
 }

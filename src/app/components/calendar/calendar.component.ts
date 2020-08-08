@@ -14,9 +14,19 @@ export interface CalendarDay {
   active: boolean;
   currentDay: boolean;
   date: Date | null;
+  selected: boolean;
+  marking: boolean;
 }
 
 export type locale = "en" | "da";
+
+interface DayStyling {
+  day_disabled: boolean;
+  day_active: boolean;
+  today: boolean;
+  selected: boolean;
+  marking: boolean;
+}
 
 @Component({
   selector: "app-calendar",
@@ -25,6 +35,8 @@ export type locale = "en" | "da";
 })
 export class CalendarComponent implements OnInit, AfterViewInit {
   @Input() dayBgColor: string;
+  @Input() daySelectedBgColor: string;
+  @Input() dayMarkingBgColor: string;
   @Input() dayTodayBgColor: string;
   @Input() dayHoverBgColor: string;
   @Input() dayDisabledBgColor: string;
@@ -92,6 +104,20 @@ export class CalendarComponent implements OnInit, AfterViewInit {
       );
     }
 
+    if (this.daySelectedBgColor) {
+      (this.elementRef.nativeElement as HTMLElement).style.setProperty(
+        "--day-bgcolor-selected",
+        this.daySelectedBgColor
+      );
+    }
+
+    if (this.dayMarkingBgColor) {
+      (this.elementRef.nativeElement as HTMLElement).style.setProperty(
+        "--day-bgcolor-marking",
+        this.dayMarkingBgColor
+      );
+    }
+
     if (this.monthYearTextColor) {
       (this.elementRef.nativeElement as HTMLElement).style.setProperty(
         "--monthyear-color",
@@ -117,11 +143,30 @@ export class CalendarComponent implements OnInit, AfterViewInit {
 
   onDayClick(day: CalendarDay): void {
     if (day.active) {
+      this.days.forEach((value) => (value.selected = false));
+      day.selected = true;
       this.dayClick.emit(day);
     }
   }
 
-  generateCalendarDates(year: number, month: number): void {
+  getDayStyling(day: CalendarDay): DayStyling {
+    return {
+      day_disabled: !day.active,
+      day_active: day.active,
+      today: day.currentDay,
+      selected: day.selected,
+      marking: day.marking,
+    };
+  }
+
+  private renderCalendar(date: Date): void {
+    const monthName = moment(date).format("MMMM");
+    const year = moment(date).year();
+    this.title = `${monthName} ${year}`;
+    this.generateCalendarDates(date.getFullYear(), date.getMonth());
+  }
+
+  private generateCalendarDates(year: number, month: number): void {
     const currentMonth = moment(new Date(year, month, 1)); // Zero based
     const daysInCurrentMonth = currentMonth.daysInMonth();
 
@@ -136,13 +181,6 @@ export class CalendarComponent implements OnInit, AfterViewInit {
     this.days = previousDays.concat(currentDays.concat(nextDays));
   }
 
-  private renderCalendar(date: Date): void {
-    const monthName = moment(date).format("MMMM");
-    const year = moment(date).year();
-    this.title = `${monthName} ${year}`;
-    this.generateCalendarDates(date.getFullYear(), date.getMonth());
-  }
-
   private generateDayNames(): void {
     const weekDaysFromMoment = moment.weekdaysShort();
     for (let index = 1; index < weekDaysFromMoment.length; index++) {
@@ -155,17 +193,31 @@ export class CalendarComponent implements OnInit, AfterViewInit {
 
   private generateCurrentDays(daysInMonth: number): CalendarDay[] {
     const days: CalendarDay[] = [];
-    const currentMonth = moment().month();
     const selectedMonth = moment(this.currentSelectedMonth).month();
     const selectedYear = moment(this.currentSelectedMonth).year();
     const currentDay = moment().date();
+    const currentMonth = moment().month();
+    const currentYear = moment().year();
 
     for (let day = 1; day <= daysInMonth; day++) {
+      const date = new Date(selectedYear, selectedMonth, day);
+      let currentDaySelected = false;
+
+      if (
+        currentYear === selectedYear &&
+        currentMonth === selectedMonth &&
+        currentDay === day
+      ) {
+        currentDaySelected = true;
+      }
+
       days.push({
         active: true,
-        currentDay: currentMonth === selectedMonth && currentDay === day,
+        currentDay: currentDaySelected,
         day,
-        date: new Date(selectedYear, selectedMonth, day),
+        date,
+        selected: false,
+        marking: true,
       });
     }
 
@@ -198,6 +250,8 @@ export class CalendarComponent implements OnInit, AfterViewInit {
           currentDay: false,
           day,
           date: null,
+          selected: false,
+          marking: false,
         });
       }
     }
@@ -220,6 +274,8 @@ export class CalendarComponent implements OnInit, AfterViewInit {
         currentDay: false,
         day,
         date: null,
+        selected: false,
+        marking: false,
       });
     }
 
