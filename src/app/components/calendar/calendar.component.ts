@@ -217,7 +217,7 @@ export class CalendarComponent implements OnInit, AfterViewInit {
         day,
         date,
         selected: false,
-        marking: true,
+        marking: false,
       });
     }
 

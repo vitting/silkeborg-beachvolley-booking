@@ -10,6 +10,12 @@ import { AngularFirestoreModule, SETTINGS } from "@angular/fire/firestore";
 import { AngularFireAnalyticsModule } from "@angular/fire/analytics";
 import "moment/locale/da";
 import { CalendarModule } from "./components/calendar/calendar.module";
+import { BookingFormModule } from "./components/booking-form/booking-form.module";
+import { ResourcesModule } from "./pages/admin/resources/resources.module";
+import { ResourceEditModule } from "./pages/admin/resource-edit/resource-edit.module";
+import { BookingsModule } from "./pages/bookings/bookings.module";
+import { BookingEditModule } from './pages/booking-edit/booking-edit.module';
+import { ResourceIntervalEditModule } from './components/resource-interval-edit/resource-interval-edit.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +27,12 @@ import { CalendarModule } from "./components/calendar/calendar.module";
     AngularFirestoreModule,
     AngularFireAnalyticsModule,
     CalendarModule,
+    BookingFormModule,
+    ResourcesModule,
+    ResourceEditModule,
+    BookingsModule,
+    BookingEditModule,
+    ResourceIntervalEditModule,
   ],
   providers: [
     // Connect to local firestore emulator in development

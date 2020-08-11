@@ -1,0 +1,78 @@
+<h1 mat-dialog-title>Hi</h1>
+<div mat-dialog-content>
+  <div>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Hele dagen</mat-radio-button>
+      <mat-radio-button value="2">Tids periode</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div><span>Fra kl.: 8:00</span> - <span>Til kl.: 22:00</span></div>
+  <mat-form-field>
+    <mat-label>Time Interval</mat-label>
+    <mat-select>
+      <mat-option>
+        0 time
+      </mat-option>
+      <mat-option>
+        1 time
+      </mat-option>
+      <mat-option>
+        2 timer
+      </mat-option>
+      <mat-option>
+        3 timer
+      </mat-option>
+      <mat-option>
+        4 timer
+      </mat-option>
+      <mat-option>
+        5 timer
+      </mat-option>
+      <mat-option>
+        6 timer
+      </mat-option>
+      <mat-option>
+        7 timer
+      </mat-option>
+      <mat-option>
+        8 timer
+      </mat-option>
+      <mat-option>
+        9 timer
+      </mat-option>
+      <mat-option>
+        10 timer
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Minut Interval</mat-label>
+    <mat-select>
+      <mat-option>
+        0 minutter
+      </mat-option>
+      <mat-option>
+        15 minutter
+      </mat-option>
+      <mat-option>
+        30 minutter
+      </mat-option>
+      <mat-option>
+        45 minutter
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-chip-list aria-label="Fish selection">
+    <mat-chip>kl. 8:00-10:00</mat-chip>
+    <mat-chip>kl. 10:00-12:00</mat-chip>
+    <mat-chip>kl. 12:00-14:00</mat-chip>
+    <mat-chip>kl. 14:00-16:00</mat-chip>
+    <mat-chip>kl. 16:00-18:00</mat-chip>
+    <mat-chip>kl. 18:00-20:00</mat-chip>
+  </mat-chip-list>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="action()">No Thanks</button>
+  <button mat-button (click)="action()" cdkFocusInitial>Ok</button>
+</div>
