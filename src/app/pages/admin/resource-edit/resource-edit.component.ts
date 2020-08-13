@@ -14,7 +14,9 @@ export class ResourceEditComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dialog.open(ResourceIntervalEditComponent, {minWidth: 300});
+  }
 
   onSubmit(): void {
 

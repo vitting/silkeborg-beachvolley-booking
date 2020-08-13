@@ -1,0 +1,7 @@
+<div class="number_selector">
+  <button mat-icon-button color="primary" (click)="subtract()">
+    <mat-icon>remove</mat-icon>
+  </button>
+  <input type="number" value="18" [value]="valueToShow" (change)="changeValue($event)" disabled />
+  <button mat-icon-button color="primary" (click)="add()"><mat-icon>add</mat-icon></button>
+</div>

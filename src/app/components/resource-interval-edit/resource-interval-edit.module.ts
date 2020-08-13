@@ -12,7 +12,7 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
 import { MatChipsModule } from "@angular/material/chips";
-
+import {NumberSelectorModule} from "../number-selector/number-selector.module";
 @NgModule({
   declarations: [ResourceIntervalEditComponent],
   imports: [
@@ -28,6 +28,7 @@ import { MatChipsModule } from "@angular/material/chips";
     MatSelectModule,
     MatChipsModule,
     MatDialogModule,
+    NumberSelectorModule
   ],
 })
 export class ResourceIntervalEditModule {}
