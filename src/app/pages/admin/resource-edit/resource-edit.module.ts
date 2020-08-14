@@ -14,6 +14,7 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
 import { MatChipsModule } from "@angular/material/chips";
 import { MatDialogModule } from "@angular/material/dialog";
+import { ResourceIntervalEditModule } from "src/app/components/resource-interval-edit/resource-interval-edit.module";
 
 @NgModule({
   declarations: [ResourceEditComponent],
@@ -30,7 +31,9 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatRadioModule,
     MatSelectModule,
     MatChipsModule,
-    MatDialogModule
+    MatDialogModule,
+    ResourceIntervalEditModule
   ],
+
 })
 export class ResourceEditModule {}

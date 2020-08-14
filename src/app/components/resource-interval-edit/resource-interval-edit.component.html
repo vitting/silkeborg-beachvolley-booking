@@ -1,157 +1,180 @@
-<div class="container">
-  <h1 mat-dialog-title>Mandag - interval</h1>
-  <div mat-dialog-content>
-    <div>
-      <mat-radio-group aria-label="Select an option" class="periode-select" (change)="periodeChange($event)" [value]="selectedPeriode">
-        <mat-radio-button value="allday" class="periode"
-          >Hele dagen</mat-radio-button
-        >
-        <mat-radio-button value="timeperiode" class="periode"
-          >Tids periode</mat-radio-button
-        >
-      </mat-radio-group>
+<h1 mat-dialog-title>Mandag - interval</h1>
+<div mat-dialog-content>
+  <div class="test">
+    <div class="test0">Fra kl.</div>
+    <div class="test1">
+      08
     </div>
-    <div class="time_periode_container" *ngIf="showTimePeriodeContainer">
-      <div class="timeintervals">
-        <div class="interval">
-          <span class="from_interval_text"
-            >Fra kl. {{fromIntervalH + ':' + fromIntervalM}}</span
-          >
-          <div class="from_interval_edit">
-            <app-number-selector
-              [zeroPrefix]="false"
-              [value]="8"
-              [minValue]="0"
-              [maxValue]="23"
-              (valueChange)="fromIntervalChange($event, 'h')"
-            ></app-number-selector>
-            <span>:</span>
-            <app-number-selector
-              [minValue]="0"
-              [maxValue]="59"
-              (valueChange)="fromIntervalChange($event, 'm')"
-            ></app-number-selector>
-          </div>
-        </div>
-
-        <div class="interval">
-          <span class="to_interval_text"
-            >Til kl. {{toIntervalH + ':' + toIntervalM}}</span
-          >
-          <div class="to_interval_edit">
-            <app-number-selector
-              [zeroPrefix]="false"
-              [value]="22"
-              [minValue]="0"
-              [maxValue]="23"
-              (valueChange)="toIntervalChange($event, 'h')"
-            ></app-number-selector>
-            <span>:</span>
-            <app-number-selector
-              [minValue]="0"
-              [maxValue]="59"
-              (valueChange)="toIntervalChange($event, 'm')"
-            ></app-number-selector>
-          </div>
-        </div>
-      </div>
-
-      <div class="time_hour_interval">
-        <mat-form-field class="select">
-          <mat-label>Time interval</mat-label>
-          <mat-select>
-            <mat-option [value]="0">
-              0 time
-            </mat-option>
-            <mat-option [value]="1">
-              1 time
-            </mat-option>
-            <mat-option [value]="2">
-              2 timer
-            </mat-option>
-            <mat-option [value]="3">
-              3 timer
-            </mat-option>
-            <mat-option [value]="4">
-              4 timer
-            </mat-option>
-            <mat-option [value]="5">
-              5 timer
-            </mat-option>
-            <mat-option [value]="6">
-              6 timer
-            </mat-option>
-            <mat-option [value]="7">
-              7 timer
-            </mat-option>
-            <mat-option [value]="8">
-              8 timer
-            </mat-option>
-            <mat-option [value]="9">
-              9 timer
-            </mat-option>
-            <mat-option [value]="10">
-              10 timer
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <span> - </span>
-        <mat-form-field class="select">
-          <mat-label>Minut Interval</mat-label>
-          <mat-select>
-            <mat-option [value]="0">
-              0 minutter
-            </mat-option>
-            <mat-option [value]="15">
-              15 minutter
-            </mat-option>
-            <mat-option [value]="30">
-              30 minutter
-            </mat-option>
-            <mat-option [value]="45">
-              45 minutter
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-
-      <mat-chip-list class="mat-chip-list-stacked" aria-label="tids interval">
-        <mat-chip [removable]="true" (removed)="remove()"
-          ><span>kl. 8:00-10:00</span>
-          <mat-icon matChipRemove>cancel</mat-icon></mat-chip
-        >
-        <mat-chip [removable]="true" (removed)="remove()"
-          ><span>kl. 10:00-12:00</span>
-          <mat-icon matChipRemove>cancel</mat-icon></mat-chip
-        >
-        <mat-chip [removable]="true" (removed)="remove()"
-          ><span>kl. 12:00-14:00</span>
-          <mat-icon matChipRemove>cancel</mat-icon></mat-chip
-        >
-        <mat-chip [removable]="true" (removed)="remove()"
-          ><span>kl. 14:00-16:00</span>
-          <mat-icon matChipRemove>cancel</mat-icon></mat-chip
-        >
-        <mat-chip [removable]="true" (removed)="remove()"
-          ><span>kl. 16:00-18:00</span>
-          <mat-icon matChipRemove>cancel</mat-icon></mat-chip
-        >
-        <mat-chip [removable]="true" (removed)="remove()"
-          ><span>kl. 18:00-20:00</span>
-          <mat-icon matChipRemove>cancel</mat-icon></mat-chip
-        >
-      </mat-chip-list>
+    <div class="test3">:</div>
+    <div class="test2">
+      00
     </div>
   </div>
-  <div mat-dialog-actions class="buttons">
-    <button mat-raised-button (click)="action('cancel')">Fortryd</button>
-    <button
-      mat-raised-button
-      color="primary"
-      (click)="action('save')"
-      cdkFocusInitial
+  <!-- <div class="test">
+    <div class="test0">Til kl.</div>
+    <div class="test1">
+      23
+    </div>
+    <div class="test3">:</div>
+    <div class="test2">
+      00
+    </div>
+  </div> -->
+  <div class="periodes">
+    <mat-radio-group
+      aria-label="Select an option"
+      class="periode-select"
+      (change)="periodeChange($event)"
+      [value]="selectedPeriode"
     >
-      Gem
-    </button>
+      <mat-radio-button value="allday" class="periode"
+        >Hele dagen</mat-radio-button
+      >
+      <mat-radio-button value="timeperiode" class="periode"
+        >Tids periode</mat-radio-button
+      >
+    </mat-radio-group>
   </div>
+  <div class="time_periode_container" *ngIf="showTimePeriodeContainer">
+    <div class="timeintervals">
+      <div class="interval">
+        <span class="from_interval_text"
+          >Fra kl. {{fromIntervalH + ':' + fromIntervalM}}</span
+        >
+        <div class="from_interval_edit">
+          <app-number-selector
+            [zeroPrefix]="false"
+            [value]="8"
+            [minValue]="0"
+            [maxValue]="23"
+            (valueChange)="fromIntervalChange($event, 'h')"
+          ></app-number-selector>
+          <span>:</span>
+          <app-number-selector
+            [minValue]="0"
+            [maxValue]="59"
+            (valueChange)="fromIntervalChange($event, 'm')"
+          ></app-number-selector>
+        </div>
+      </div>
+
+      <div class="interval">
+        <span class="to_interval_text"
+          >Til kl. {{toIntervalH + ':' + toIntervalM}}</span
+        >
+        <div class="to_interval_edit">
+          <app-number-selector
+            [zeroPrefix]="false"
+            [value]="22"
+            [minValue]="0"
+            [maxValue]="23"
+            (valueChange)="toIntervalChange($event, 'h')"
+          ></app-number-selector>
+          <span>:</span>
+          <app-number-selector
+            [minValue]="0"
+            [maxValue]="59"
+            (valueChange)="toIntervalChange($event, 'm')"
+          ></app-number-selector>
+        </div>
+      </div>
+    </div>
+
+    <div class="time_hour_interval">
+      <mat-form-field class="select">
+        <mat-label>Time interval</mat-label>
+        <mat-select>
+          <mat-option [value]="0">
+            0 time
+          </mat-option>
+          <mat-option [value]="1">
+            1 time
+          </mat-option>
+          <mat-option [value]="2">
+            2 timer
+          </mat-option>
+          <mat-option [value]="3">
+            3 timer
+          </mat-option>
+          <mat-option [value]="4">
+            4 timer
+          </mat-option>
+          <mat-option [value]="5">
+            5 timer
+          </mat-option>
+          <mat-option [value]="6">
+            6 timer
+          </mat-option>
+          <mat-option [value]="7">
+            7 timer
+          </mat-option>
+          <mat-option [value]="8">
+            8 timer
+          </mat-option>
+          <mat-option [value]="9">
+            9 timer
+          </mat-option>
+          <mat-option [value]="10">
+            10 timer
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <span> - </span>
+      <mat-form-field class="select">
+        <mat-label>Minut Interval</mat-label>
+        <mat-select>
+          <mat-option [value]="0">
+            0 minutter
+          </mat-option>
+          <mat-option [value]="15">
+            15 minutter
+          </mat-option>
+          <mat-option [value]="30">
+            30 minutter
+          </mat-option>
+          <mat-option [value]="45">
+            45 minutter
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-chip-list class="mat-chip-list-stacked" aria-label="tids interval">
+      <mat-chip [removable]="true" (removed)="remove()"
+        ><span>kl. 8:00-10:00</span>
+        <mat-icon matChipRemove>cancel</mat-icon></mat-chip
+      >
+      <mat-chip [removable]="true" (removed)="remove()"
+        ><span>kl. 10:00-12:00</span>
+        <mat-icon matChipRemove>cancel</mat-icon></mat-chip
+      >
+      <mat-chip [removable]="true" (removed)="remove()"
+        ><span>kl. 12:00-14:00</span>
+        <mat-icon matChipRemove>cancel</mat-icon></mat-chip
+      >
+      <mat-chip [removable]="true" (removed)="remove()"
+        ><span>kl. 14:00-16:00</span>
+        <mat-icon matChipRemove>cancel</mat-icon></mat-chip
+      >
+      <mat-chip [removable]="true" (removed)="remove()"
+        ><span>kl. 16:00-18:00</span>
+        <mat-icon matChipRemove>cancel</mat-icon></mat-chip
+      >
+      <mat-chip [removable]="true" (removed)="remove()"
+        ><span>kl. 18:00-20:00</span>
+        <mat-icon matChipRemove>cancel</mat-icon></mat-chip
+      >
+    </mat-chip-list>
+  </div>
+</div>
+<div mat-dialog-actions class="buttons">
+  <button mat-raised-button (click)="action('cancel')">Fortryd</button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="action('save')"
+    cdkFocusInitial
+  >
+    Gem
+  </button>
 </div>

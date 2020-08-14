@@ -22,18 +22,6 @@ export class NumberSelectorComponent implements OnInit {
     this.formatValue(this.value);
   }
 
-  changeValue(event: Event): void {
-    let value: string = (event.target as HTMLInputElement).value;
-    console.log(value);
-    // if (value >= this.minValue && value <= this.maxValue) {
-
-    // } else {
-    //   value = this.value;
-    //   this.formatValue(this.value);
-    // }
-
-  }
-
   add(): void {
     if (this.value + 1 <= this.maxValue) {
       this.value++;

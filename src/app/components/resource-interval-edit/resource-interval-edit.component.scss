@@ -1,14 +1,39 @@
-.container {
-  .mat-chip {
-    display: flex;
-    justify-content: space-between;
+.test {
+  display: flex;
+  align-items: center;
+
+  .test0 {
+    // margin-right: 5px;
+    width: 50px;
   }
 
-  .buttons {
-    display: flex;
-    justify-content: flex-end;
+  .test1, .test2 {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(90, 83, 196);
+    line-height: 40px;
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
   }
 
+  .test3 {
+    padding: 0 5px;
+  }
+}
+.mat-chip {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.periodes {
+  height: 60px;
   .periode-select {
     display: flex;
     flex-direction: column;
@@ -17,36 +42,38 @@
       margin-bottom: 5px;
     }
   }
+}
 
-  .select {
-    width: 100px;
-  }
 
-  .timeintervals {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-    .interval {
-      margin-top: 10px;
+.select {
+  width: 100px;
+}
 
-      .from_interval_text, .to_interval_text {
-        display: inline-block;
-        text-align: center;
-        width: 100%;
-        font-size: 1.1em;
-        font-weight: 200;
-      }
+.timeintervals {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  .interval {
+    margin-top: 10px;
+
+    .from_interval_text,
+    .to_interval_text {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      font-size: 1.1em;
+      font-weight: 200;
     }
   }
+}
 
-  .time_hour_interval {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.time_hour_interval {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-  }
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
