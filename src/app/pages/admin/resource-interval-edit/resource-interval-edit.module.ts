@@ -12,11 +12,14 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatRadioModule } from "@angular/material/radio";
 import { MatSelectModule } from "@angular/material/select";
 import { MatChipsModule } from "@angular/material/chips";
-import {NumberSelectorModule} from "../number-selector/number-selector.module";
+import { TimeSelectorModule } from "../../../components/time-selector/time-selector.module";
+import { ResourceIntervalEditRoutingModule } from "./resource-interval-edit-routing.module";
+
 @NgModule({
   declarations: [ResourceIntervalEditComponent],
   imports: [
     CommonModule,
+    ResourceIntervalEditRoutingModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
@@ -28,7 +31,7 @@ import {NumberSelectorModule} from "../number-selector/number-selector.module";
     MatSelectModule,
     MatChipsModule,
     MatDialogModule,
-    NumberSelectorModule
+    TimeSelectorModule,
   ],
 })
 export class ResourceIntervalEditModule {}

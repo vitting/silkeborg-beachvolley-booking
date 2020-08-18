@@ -14,8 +14,8 @@ import { BookingFormModule } from "./components/booking-form/booking-form.module
 import { ResourcesModule } from "./pages/admin/resources/resources.module";
 import { ResourceEditModule } from "./pages/admin/resource-edit/resource-edit.module";
 import { BookingsModule } from "./pages/bookings/bookings.module";
-import { BookingEditModule } from './pages/booking-edit/booking-edit.module';
-import { ResourceIntervalEditModule } from './components/resource-interval-edit/resource-interval-edit.module';
+import { BookingEditModule } from "./pages/booking-edit/booking-edit.module";
+import { ResourceIntervalEditModule } from "./pages/admin/resource-interval-edit/resource-interval-edit.module";
 
 @NgModule({
   declarations: [AppComponent],

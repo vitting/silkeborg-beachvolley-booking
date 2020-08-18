@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { ResourceIntervalEditComponent } from "src/app/components/resource-interval-edit/resource-interval-edit.component";
 import { MatDialog } from "@angular/material/dialog";
 
 @Component({
@@ -15,7 +14,7 @@ export class ResourceEditComponent implements OnInit {
   constructor(private fb: FormBuilder, private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.dialog.open(ResourceIntervalEditComponent, {minWidth: 300});
+    // this.dialog.open(ResourceIntervalEditComponent, {minWidth: 300});
   }
 
   onSubmit(): void {
@@ -24,6 +23,6 @@ export class ResourceEditComponent implements OnInit {
   }
 
   editInterval(): void {
-    this.dialog.open(ResourceIntervalEditComponent);
+
   }
 }
