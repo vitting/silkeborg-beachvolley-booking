@@ -6,10 +6,9 @@
           <div class="res_image"></div>
         </div>
         <mat-form-field class="full-width">
-          <mat-label>Favorite food</mat-label>
+          <mat-label>Ressource navn</mat-label>
           <input
             matInput
-            placeholder="Ex. Pizza"
             value=""
             formControlName="name"
           />
@@ -17,17 +16,66 @@
         <div>
           <div>
             <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="1">Altid tilgængelig</mat-radio-button>
-              <mat-radio-button value="2">Dagsbasic</mat-radio-button>
+              <mat-radio-button value="1">Altid tilgængelig <mat-icon>info</mat-icon></mat-radio-button>
+              <mat-radio-button value="2">Dagsbasic <mat-icon>info</mat-icon></mat-radio-button>
             </mat-radio-group>
           </div>
-          <div><mat-checkbox labelPosition="after">Mandag</mat-checkbox> <button mat-icon-button (click)="editInterval()"><mat-icon>edit</mat-icon></button></div>
-          <div><mat-checkbox labelPosition="after">Tirsdag</mat-checkbox> <button mat-icon-button (click)="editInterval()"><mat-icon>edit</mat-icon></button></div>
-          <div><mat-checkbox labelPosition="after">Onsdag</mat-checkbox> <button mat-icon-button (click)="editInterval()"><mat-icon>edit</mat-icon></button></div>
-          <div><mat-checkbox labelPosition="after">Torsdag</mat-checkbox> <button mat-icon-button (click)="editInterval()"><mat-icon>edit</mat-icon></button></div>
-          <div><mat-checkbox labelPosition="after">Fredag</mat-checkbox> <button mat-icon-button (click)="editInterval()"><mat-icon>edit</mat-icon></button></div>
-          <div><mat-checkbox labelPosition="after">Lørdag</mat-checkbox> <button mat-icon-button (click)="editInterval()"><mat-icon>edit</mat-icon></button></div>
-          <div><mat-checkbox labelPosition="after">Søndag</mat-checkbox> <button mat-icon-button (click)="editInterval()"><mat-icon>edit</mat-icon></button></div>
+          <div>
+            <mat-checkbox labelPosition="after"
+              ><span class="day_label">Mandag</span></mat-checkbox
+            >
+            <button mat-icon-button (click)="editInterval(1)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <div>
+            <mat-checkbox labelPosition="after"
+              ><span class="day_label">Tirsdag</span></mat-checkbox
+            >
+            <button mat-icon-button (click)="editInterval(2)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <div>
+            <mat-checkbox labelPosition="after"
+              ><span class="day_label">Onsdag</span></mat-checkbox
+            >
+            <button mat-icon-button (click)="editInterval(3)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <div>
+            <mat-checkbox labelPosition="after"
+              ><span class="day_label">Torsdag</span></mat-checkbox
+            >
+            <button mat-icon-button (click)="editInterval(4)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <div>
+            <mat-checkbox labelPosition="after"
+              ><span class="day_label">Fredag</span></mat-checkbox
+            >
+            <button mat-icon-button (click)="editInterval(5)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <div>
+            <mat-checkbox labelPosition="after"
+              ><span class="day_label">Lørdag</span></mat-checkbox
+            >
+            <button mat-icon-button (click)="editInterval(6)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+          <div>
+            <mat-checkbox labelPosition="after"
+              ><span class="day_label">Søndag</span></mat-checkbox
+            >
+            <button mat-icon-button (click)="editInterval(0)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
         </div>
         <div class="buttons">
           <button
@@ -35,7 +83,7 @@
             type="submit"
             [disabled]="!resourceForm.valid"
           >
-            Save
+            Opret
           </button>
         </div>
       </form>

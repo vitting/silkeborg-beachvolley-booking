@@ -22,10 +22,6 @@
 }
 
 
-.select {
-  width: 100px;
-}
-
 .timeintervals {
   display: flex;
   flex-direction: column;
@@ -47,10 +43,24 @@
 .time_hour_interval {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
+  .select {
+    max-width: 110px;
+  }
+
+  .separator {
+    margin: 0 10px;
+  }
+}
+
+.generate_button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }

@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ResourceIntervalEditComponent } from "./resource-interval-edit.component";
-import { MatDialogModule } from "@angular/material/dialog";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
@@ -30,7 +29,6 @@ import { ResourceIntervalEditRoutingModule } from "./resource-interval-edit-rout
     MatRadioModule,
     MatSelectModule,
     MatChipsModule,
-    MatDialogModule,
     TimeSelectorModule,
   ],
 })

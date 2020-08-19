@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { MatDialog } from "@angular/material/dialog";
+import { Router } from "@angular/router";
+import { Location } from "@angular/common";
 
 @Component({
   templateUrl: "./resource-edit.component.html",
@@ -8,21 +9,24 @@ import { MatDialog } from "@angular/material/dialog";
 })
 export class ResourceEditComponent implements OnInit {
   resourceForm = this.fb.group({
-    name: [""]
+    name: [""],
   });
 
-  constructor(private fb: FormBuilder, private dialog: MatDialog) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
-    // this.dialog.open(ResourceIntervalEditComponent, {minWidth: 300});
+    console.log(this.location.getState());
   }
 
-  onSubmit(): void {
+  onSubmit(): void {}
 
-
-  }
-
-  editInterval(): void {
-
+  editInterval(day: number): void {
+    this.router.navigateByUrl("/resourceinterval", {
+      state: { data: { id: 4234234, text: "something about something" } },
+    });
   }
 }

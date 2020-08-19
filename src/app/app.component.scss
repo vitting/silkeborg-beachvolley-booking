@@ -1,0 +1,22 @@
+@import "../colors";
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+
+  .top {
+    height: 40px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    background-color: $indigo-700;
+
+    .mat-icon {
+      color: white;
+    }
+  }
+
+  .body {
+    padding: 5px;
+  }
+}

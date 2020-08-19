@@ -16,6 +16,9 @@ import { ResourceEditModule } from "./pages/admin/resource-edit/resource-edit.mo
 import { BookingsModule } from "./pages/bookings/bookings.module";
 import { BookingEditModule } from "./pages/booking-edit/booking-edit.module";
 import { ResourceIntervalEditModule } from "./pages/admin/resource-interval-edit/resource-interval-edit.module";
+import { MatIconModule } from "@angular/material/icon";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +36,9 @@ import { ResourceIntervalEditModule } from "./pages/admin/resource-interval-edit
     BookingsModule,
     BookingEditModule,
     ResourceIntervalEditModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
   ],
   providers: [
     // Connect to local firestore emulator in development
