@@ -1,1 +1,63 @@
-<p>booking-edit works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Mandag d. 23. juni</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="resources">
+      <mat-select placeholder="Vælg ressource" name="item">
+        <mat-option [value]="0">
+          Resource 1
+        </mat-option>
+        <mat-option [value]="1">
+          Resource 2
+        </mat-option>
+      </mat-select>
+    </div>
+    <div class="times">
+      <label>Vælg tid</label>
+      <mat-chip-list [selectable]="true">
+        <mat-chip
+          (click)="bookingTimeChange(item)"
+          [value]="item"
+          [selected]="item.selected"
+          *ngFor="let item of bookingTimes"
+          >{{item.text}}</mat-chip
+        >
+      </mat-chip-list>
+    </div>
+    <div>
+      <mat-form-field class="full-width">
+        <mat-label>Kommentar</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </div>
+    <div class="receipt">
+      <h3>Bookings information</h3>
+      <div class="line">
+        <mat-icon>turned_in</mat-icon>
+        <!-- <span>Indendørs bane 1</span> -->
+        <span>Vælg ressource</span>
+      </div>
+      <div class="line">
+        <mat-icon>person</mat-icon>
+        <span>Christian Vitting Nicolaisen</span>
+      </div>
+      <div class="line">
+        <mat-icon>event</mat-icon>
+        <span>Mandag d. 23. juni 2020</span>
+      </div>
+      <div class="line">
+        <mat-icon>access_time</mat-icon>
+        <span>kl. 12.00 - 14.00</span>
+      </div>
+      <div class="line">
+        <mat-icon>pan_tool</mat-icon>
+        <span>Bookingen skal godkendes af administrator</span>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="buttons"><button mat-raised-button>Fortryd</button>
+      <button mat-raised-button color="primary">Book</button></div>
+  </mat-card-actions>
+</mat-card>

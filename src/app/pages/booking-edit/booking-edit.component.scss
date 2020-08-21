@@ -1,0 +1,40 @@
+.resources {
+  margin: 20px 0;
+}
+
+.times {
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  margin-top: 10px;
+}
+
+.receipt {
+  .line {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.approve_text {
+  display: flex;
+  background-color: rgb(53, 48, 104);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+
+  .mat-icon {
+    margin-right: 5px;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
