@@ -19,6 +19,7 @@ import { ResourceIntervalEditModule } from "./pages/admin/resource-interval-edit
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
+import { BookingsToApproveModule } from './pages/admin/bookings-to-approve/bookings-to-approve.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +40,7 @@ import { MatButtonModule } from "@angular/material/button";
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
+    BookingsToApproveModule,
   ],
   providers: [
     // Connect to local firestore emulator in development
